@@ -28,7 +28,7 @@ resource "azurerm_subnet" "be-rg" {
 }*/
 
 module "web-vm" {
-  source = "../../moon/module/compute"
+  source = "../../module/compute"
   vm-name = "${var.env}-Web"
   subnet_id = module.be-vnet.vnet_subnets[0]
   location = azurerm_resource_group.be-rg.location

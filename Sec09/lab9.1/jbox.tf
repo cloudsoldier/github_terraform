@@ -4,7 +4,7 @@ resource "azurerm_resource_group" "jbox-rg" {
 }
 
 module "jbox-vm" {
-  source         = "../../moon/module/compute"
+  source         = "../../module/compute"
   vm-name        = "${var.env}-Jbox"
   subnet_id      = module.fe-vnet.vnet_subnets[1]
   location       = azurerm_resource_group.jbox-rg.location
